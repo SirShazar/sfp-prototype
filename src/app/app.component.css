@@ -1,0 +1,81 @@
+:host {
+    height: inherit;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    height: inherit;
+}
+
+.toolbar-pane {
+    position: relative;
+    z-index: 100;
+    width: inherit;
+    background-color: lightgray;
+}
+
+.toolbar-pane .toolbar-pane-spacer {
+    flex: 1 1 auto;
+}
+
+.body-pane {
+    position: relative;
+    z-index: 50;
+    width: inherit;
+    flex: 1;
+    display:flex;
+}
+
+.body-pane .left-pane {
+    width: 200px;
+    z-index: 0;
+    height: inherit;
+    background-color:rgb(230, 230, 230);
+}
+
+
+.body-pane .left-pane .selectedFolder {
+    background-color: #a6b4ff;
+}
+
+.body-pane .left-pane .mat-button {
+    padding: 15px;
+    text-align: left;
+}
+
+.body-pane .right-pane {
+    flex: 1;
+    display: flex;
+    flex-direction: column;  
+}
+
+.body-pane .right-pane .file-pane{
+    flex: 1;
+    /* background-color: pink; */
+   
+}
+
+.body-pane .right-pane .activity-log-pane{
+    /* flex: 1;
+    background-color: lightblue;
+    border-top: 1px solid gray;  */
+
+    height: 400px;
+    box-sizing: border-box;
+    border-top: 1px solid lightgray;
+    margin-top: 24px;
+    overflow: auto;
+}
+
+.body-pane .right-pane .file-description{
+    font-size: 0.75em;
+}
+
+.fake-mat-h3 {
+    font-family: Roboto,"Helvetica Neue",sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(0,0,0,.54);
+    padding-left: 24px;
+}

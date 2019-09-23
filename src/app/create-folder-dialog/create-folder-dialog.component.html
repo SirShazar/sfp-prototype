@@ -1,0 +1,34 @@
+<h1 mat-dialog-title>New Payload Folder</h1>
+<div mat-dialog-content>
+    <mat-form-field class="full-width">
+        <input matInput placeholder="Name" value="">
+    </mat-form-field>
+    <mat-form-field  class="full-width">
+        <mat-chip-list #chipList aria-label="Notification Email">
+                <mat-chip *ngFor="let address of addresses" [selectable]="selectable" [removable]="removable"
+                    (removed)="remove(address)">
+                    {{address.name}}
+                    <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                </mat-chip>
+                <input placeholder="Notification Email" [matChipInputFor]="chipList"
+                    [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="addOnBlur"
+                    (matChipInputTokenEnd)="add($event)">
+            </mat-chip-list>
+    </mat-form-field>
+    <mat-form-field class="full-width">
+        <mat-chip-list #chipList2 aria-label="Permissions">
+            <mat-chip *ngFor="let group of groups" [selectable]="selectable" [removable]="removable"
+                (removed)="remove(group)">
+                {{group.name}}
+                <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+            </mat-chip>
+            <input placeholder="Permissions" [matChipInputFor]="chipList2"
+                [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="addOnBlur"
+                (matChipInputTokenEnd)="add($event)">
+        </mat-chip-list>
+    </mat-form-field>
+</div>
+<div mat-dialog-actions align="end">
+    <button mat-raised-button color="primary" cdkFocusInitial>Create Folder</button>
+    <button mat-raised-button (click)="onNoClick()">Cancel</button>
+</div>

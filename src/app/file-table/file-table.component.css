@@ -1,0 +1,40 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 95%;
+}
+
+.table-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+
+table {
+  width: 100%;
+  flex: 1;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.mat-column-icon {
+  width: 40px;
+}
+
+.mat-column-name {
+  min-width: 100px;
+  width: 20%;
+}
+
+.mat-column-select {
+  overflow: initial;
+  width: 70px;
+}
+
+.mat-paginator {
+  height: auto;
+}

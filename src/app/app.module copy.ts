@@ -13,10 +13,10 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
 import {MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS} from '@angular/material/dialog';
-import { CreateFolderDialogComponent } from './create-folder-dialog/create-folder-dialog.component';
-import { UploadFileDialogComponent } from './upload-file-dialog/upload-file-dialog.component';
-import { FileTableComponent} from './file-table/file-table.component';
-import { LogComponent } from './log/log.component';
+// import { CreateFolderDialogComponent } from './create-folder-dialog/create-folder-dialog.component';
+// import { UploadFileDialogComponent } from './upload-file-dialog/upload-file-dialog.component';
+// import { FileTableComponent} from './file-table/file-table.component';
+// import { LogComponent } from './log/log.component';
 
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -28,10 +28,10 @@ import { MatSortModule } from '@angular/material/sort';
 @NgModule({
   declarations: [
     AppComponent,
-    CreateFolderDialogComponent,
-    UploadFileDialogComponent,
-    FileTableComponent,
-    LogComponent
+    // CreateFolderDialogComponent,
+    // UploadFileDialogComponent,
+    // FileTableComponent,
+    // LogComponent
   ],
   imports: [
     BrowserModule,
@@ -55,6 +55,6 @@ import { MatSortModule } from '@angular/material/sort';
     {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
   ],
   bootstrap: [AppComponent],
-  entryComponents: [CreateFolderDialogComponent, UploadFileDialogComponent],
+  // entryComponents: [CreateFolderDialogComponent, UploadFileDialogComponent],
 })
 export class AppModule { }
