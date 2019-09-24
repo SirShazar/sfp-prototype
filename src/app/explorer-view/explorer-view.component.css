@@ -1,0 +1,92 @@
+:host {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.toolbar-pane {
+  position: relative;
+  z-index: 100;
+  width: inherit;
+  background-color: lightgray;
+}
+
+.view-toggle {
+  margin-left: auto;
+  min-width: 165px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.body-pane {
+  position: relative;
+  z-index: 50;
+  width: inherit;
+  flex: 1;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.left-pane {
+  width: 200px;
+  z-index: 0;
+  background-color: rgb(230, 230, 230);
+
+  display: flex;
+  flex-direction: column;
+}
+
+.left-pane .selectedFolder {
+  background-color: #a6b4ff;
+}
+
+.left-pane .mat-button {
+  padding: 15px;
+  text-align: left;
+}
+
+.right-pane {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.file-pane {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.activity-log-pane {
+  height: 400px;
+  box-sizing: border-box;
+  border-top: 1px solid lightgray;
+  margin-top: 24px;
+  overflow: auto;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.right-pane .file-description {
+  font-size: 0.75em;
+}
+
+.fake-mat-h3 {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.54);
+  padding-left: 24px;
+}
