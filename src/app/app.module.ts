@@ -22,7 +22,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSortModule } from '@angular/material/sort';
-
+import { AngularSplitModule } from 'angular-split';
 
 
 @NgModule({
@@ -49,7 +49,8 @@ import { MatSortModule } from '@angular/material/sort';
     MatTableModule,
     MatPaginatorModule, 
     MatCheckboxModule,
-    MatSortModule 
+    MatSortModule,
+    AngularSplitModule
   ],
   providers: [
     {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}

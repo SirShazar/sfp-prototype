@@ -37,32 +37,20 @@
       </mat-list>
     </div>
     <div class="right-pane">
-      <div class="file-pane">
-        <h3 class="fake-mat-h3">Files</h3>
-        <app-file-table></app-file-table>
-        <!-- <mat-list>
-          <h3 mat-subheader>Files</h3>
-          <mat-list-item *ngFor="let file of files">
-            <mat-icon mat-list-icon>insert_drive_file</mat-icon>
-            <p mat-line>
-              <span> {{file.name}} &nbsp;&nbsp;&nbsp;&nbsp;</span>
-              <span> <span class="file-description">Date Modified:</span> {{file.updated}}
-                &nbsp;&nbsp;&nbsp;&nbsp;</span>
-              <span> <span class="file-description">Size:</span> {{file.size}}kB&nbsp;&nbsp;&nbsp;&nbsp;</span>
-              <span> <span class="file-description">Transfer Status:</span>
-                {{file.transferstatus}}&nbsp;&nbsp;&nbsp;&nbsp;</span>
-              <span> <span class="file-description">Transfer Date:</span>
-                {{file.transferdate}}&nbsp;&nbsp;&nbsp;&nbsp;</span>
-            </p>
-          </mat-list-item>
-          <mat-divider></mat-divider>
-        </mat-list> -->
-      </div>
-      <div class="activity-log-pane">
-          <h3 class="fake-mat-h3">Activity Log</h3>
-        <app-log></app-log>
-      </div>
+      <as-split unit="percent" [direction]="direction" (dragEnd)="dragEnd('percent', $event)" #split="asSplit">
+        <as-split-area size="70" #area1="asSplitArea">
+          <!-- <div class="file-pane"></div> -->
+            <h3 class="fake-mat-h3">Files</h3>
+            <app-file-table></app-file-table>
+          <!-- </div> -->
+        </as-split-area>
+        <as-split-area size="30" #area2="asSplitArea">
+          <!-- <div class="activity-log-pane"> -->
+            <h3 class="fake-mat-h3">Activity Log</h3>
+            <app-log></app-log>
+          <!-- </div> -->
+        </as-split-area>
+      </as-split>
     </div>
   </div>
 </div>
-
