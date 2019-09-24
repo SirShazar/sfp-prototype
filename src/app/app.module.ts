@@ -25,6 +25,7 @@ import { CreateFolderDialogComponent } from './create-folder-dialog/create-folde
 import { UploadFileDialogComponent } from './upload-file-dialog/upload-file-dialog.component';
 import { FileTableComponent } from './file-table/file-table.component';
 import { LogComponent } from './log/log.component';
+import { AngularSplitModule } from 'angular-split';
 
 
 @NgModule({
@@ -55,7 +56,8 @@ import { LogComponent } from './log/log.component';
     MatTableModule,
     MatPaginatorModule,
     MatCheckboxModule,
-    MatSortModule
+    MatSortModule,
+    AngularSplitModule
   ],
   providers: [
     { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { hasBackdrop: false } }

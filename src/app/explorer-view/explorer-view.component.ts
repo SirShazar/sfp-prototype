@@ -3,6 +3,7 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 import { CreateFolderDialogComponent } from '../create-folder-dialog/create-folder-dialog.component';
 import { UploadFileDialogComponent } from '../upload-file-dialog/upload-file-dialog.component';
 import { UtilitiesService } from '../services/utilities.service';
+import { SplitComponent, SplitAreaDirective } from 'angular-split';
 
 export interface Section {
   name: string;
@@ -27,6 +28,18 @@ export interface File extends Section {
 export class ExplorerViewComponent {
   isAdmin: boolean = false;
 
+  direction: string = 'vertical'
+  sizes = {
+      percent: {
+          area1: 70,
+          area2: 30,
+      },
+      pixel: {
+          area1: 120,
+          area2: '*',
+          area3: 160,
+      },
+  } 
 
   constructor(public dialog: MatDialog) {
     this.isAdmin = UtilitiesService.getAdminStatus();
