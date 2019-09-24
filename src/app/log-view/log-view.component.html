@@ -1,11 +1,38 @@
 <div class="toolbar-pane" [class.mat-elevation-z6]="!isActive">
   <mat-toolbar color="primary">
     <mat-toolbar-row>
-      <button mat-button routerLink="/explorer" class="view-toggle">
-        <mat-icon>list_alt</mat-icon>View Files
-      </button>
+      <mat-form-field>
+        <mat-label>Payload Folder</mat-label>
+        <mat-select [formControl]="payloadFolderCtrl" multiple>
+          <mat-option *ngFor="let payload of allPayloadFolders" [value]="payload">{{ payload }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="User" [(ngModel)]="filter.author" />
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="File" />
+      </mat-form-field>
+      <mat-form-field>
+          <input matInput [matDatepicker]="pickerFrom" placeholder="From" />
+          <mat-datepicker-toggle matSuffix [for]="pickerFrom"></mat-datepicker-toggle>
+          <mat-datepicker #pickerFrom></mat-datepicker>
+        </mat-form-field>
+      <mat-form-field>
+          <input matInput [matDatepicker]="pickerTo" placeholder="To" />
+          <mat-datepicker-toggle matSuffix [for]="pickerTo"></mat-datepicker-toggle>
+          <mat-datepicker #pickerTo></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Message" />
+      </mat-form-field>
+      <button mat-button class="search-button" (click)="handleSearch()"><mat-icon>search</mat-icon>Search</button>
+      <button mat-button routerLink="/explorer" class="view-toggle"><mat-icon>list_alt</mat-icon>View Files</button>
     </mat-toolbar-row>
   </mat-toolbar>
 </div>
 
-<app-log mode="full"></app-log>
+<div class="body-pane">
+  <app-log (mode)="('full')" (filter)="(filter)"></app-log>
+</div>
