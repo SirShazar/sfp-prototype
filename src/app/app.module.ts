@@ -7,7 +7,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatChipsModule } from '@angular/material/chips';
-import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
@@ -17,7 +16,9 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSortModule } from '@angular/material/sort';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule} from '@angular/material';
 
 import { AppRoutingModule, routingModules } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -42,6 +43,8 @@ import { AngularSplitModule } from 'angular-split';
     BrowserModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    FormsModule,
+    MatDatepickerModule,
     MatFormFieldModule,
     MatButtonModule,
     MatInputModule,
@@ -52,15 +55,16 @@ import { AngularSplitModule } from 'angular-split';
     MatListModule,
     MatDialogModule,
     MatChipsModule,
-    MatAutocompleteModule,
     MatTableModule,
     MatPaginatorModule,
     MatCheckboxModule,
     MatSortModule,
+    MatNativeDateModule,
     AngularSplitModule
   ],
   providers: [
-    { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { hasBackdrop: false } }
+    { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { hasBackdrop: false } },
+    MatNativeDateModule
   ],
   bootstrap: [AppComponent],
   entryComponents: [CreateFolderDialogComponent, UploadFileDialogComponent],

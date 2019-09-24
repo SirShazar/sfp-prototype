@@ -27,7 +27,8 @@ export class LogComponent implements OnInit {
   @ViewChild(MatSort, { static: true }) sort: MatSort;
 
 
-  constructor(private _logService: LogService) {  }
+  constructor(private _logService: LogService) {
+  }
 
   ngOnInit() {
     // Assign the data to the data source for the table to render

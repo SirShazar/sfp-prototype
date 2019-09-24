@@ -2,54 +2,37 @@
   <mat-toolbar color="primary">
     <mat-toolbar-row>
       <mat-form-field>
-        <mat-chip-list #chipList aria-label="Payload Folder">
-          <mat-chip
-            *ngFor="let payloadFolder of payloadFolders"
-            [selectable]="selectable"
-            [removable]="removable"
-            (removed)="remove(payloadFolder)"
-          >
-            {{ payloadFolder }}
-            <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
-          </mat-chip>
-          <input
-            placeholder="Payload Folders"
-            #payloadFolderInput
-            [formControl]="payloadFolderCtrl"
-            [matAutocomplete]="auto"
-            [matChipInputFor]="chipList"
-            [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-            [matChipInputAddOnBlur]="addOnBlur"
-            (matChipInputTokenEnd)="add($event)"
-          />
-        </mat-chip-list>
-        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
-          <mat-option *ngFor="let payloadFolder of filteredPayloadFolders | async" [value]="payloadFolder">
-            {{ payloadFolder }}
-          </mat-option>
-        </mat-autocomplete>
+        <mat-label>Payload Folder</mat-label>
+        <mat-select [formControl]="payloadFolderCtrl" multiple>
+          <mat-option *ngFor="let payload of allPayloadFolders" [value]="payload">{{ payload }}</mat-option>
+        </mat-select>
       </mat-form-field>
 
       <mat-form-field>
-        <input matInput placeholder="User" />
+        <input matInput placeholder="User" [(ngModel)]="filter.author" />
       </mat-form-field>
       <mat-form-field>
         <input matInput placeholder="File" />
       </mat-form-field>
       <mat-form-field>
-        <input matInput placeholder="From" />
-      </mat-form-field>
+          <input matInput [matDatepicker]="pickerFrom" placeholder="From" />
+          <mat-datepicker-toggle matSuffix [for]="pickerFrom"></mat-datepicker-toggle>
+          <mat-datepicker #pickerFrom></mat-datepicker>
+        </mat-form-field>
       <mat-form-field>
-        <input matInput placeholder="To" />
+          <input matInput [matDatepicker]="pickerTo" placeholder="To" />
+          <mat-datepicker-toggle matSuffix [for]="pickerTo"></mat-datepicker-toggle>
+          <mat-datepicker #pickerTo></mat-datepicker>
       </mat-form-field>
       <mat-form-field>
         <input matInput placeholder="Message" />
       </mat-form-field>
+      <button mat-button class="search-button" (click)="handleSearch()"><mat-icon>search</mat-icon>Search</button>
       <button mat-button routerLink="/explorer" class="view-toggle"><mat-icon>list_alt</mat-icon>View Files</button>
     </mat-toolbar-row>
   </mat-toolbar>
 </div>
 
 <div class="body-pane">
-  <app-log (mode)="('full')"></app-log>
+  <app-log (mode)="('full')" (filter)="(filter)"></app-log>
 </div>

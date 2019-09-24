@@ -64,8 +64,9 @@ export class LogService {
     // join the nodeName from the nodes list
     entriesArray.map(entry => {
       const node: NodeInterface = this._fileService.getNodeById(entry.node);
-      if (node)
+      if (node) {
         entry.nodeName = node.name;
+      }
     });
   }
 
