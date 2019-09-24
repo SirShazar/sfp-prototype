@@ -1,11 +1,55 @@
 <div class="toolbar-pane" [class.mat-elevation-z6]="!isActive">
   <mat-toolbar color="primary">
     <mat-toolbar-row>
-      <button mat-button routerLink="/explorer" class="view-toggle">
-        <mat-icon>list_alt</mat-icon>View Files
-      </button>
+      <mat-form-field>
+        <mat-chip-list #chipList aria-label="Payload Folder">
+          <mat-chip
+            *ngFor="let payloadFolder of payloadFolders"
+            [selectable]="selectable"
+            [removable]="removable"
+            (removed)="remove(payloadFolder)"
+          >
+            {{ payloadFolder }}
+            <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+          </mat-chip>
+          <input
+            placeholder="Payload Folders"
+            #payloadFolderInput
+            [formControl]="payloadFolderCtrl"
+            [matAutocomplete]="auto"
+            [matChipInputFor]="chipList"
+            [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+            [matChipInputAddOnBlur]="addOnBlur"
+            (matChipInputTokenEnd)="add($event)"
+          />
+        </mat-chip-list>
+        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+          <mat-option *ngFor="let payloadFolder of filteredPayloadFolders | async" [value]="payloadFolder">
+            {{ payloadFolder }}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="User" />
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="File" />
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="From" />
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="To" />
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Message" />
+      </mat-form-field>
+      <button mat-button routerLink="/explorer" class="view-toggle"><mat-icon>list_alt</mat-icon>View Files</button>
     </mat-toolbar-row>
   </mat-toolbar>
 </div>
 
-<app-log mode="full"></app-log>
+<div class="body-pane">
+  <app-log (mode)="('full')"></app-log>
+</div>

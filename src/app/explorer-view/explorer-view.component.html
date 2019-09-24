@@ -59,9 +59,8 @@
       </div>
       <div class="activity-log-pane">
           <h3 class="fake-mat-h3">Activity Log</h3>
-        <app-log></app-log>
+          <app-log (mode)="'lite'" (filter)="{category: 'Payload 1', isInternal: false}"></app-log>
       </div>
     </div>
   </div>
 </div>
-

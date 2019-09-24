@@ -1,9 +1,9 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { SelectionModel } from '@angular/cdk/collections';
-import { LogEntryInterface } from '../interfaces/log-entry.interface';
+import { LogEntryInterface, LogEntryFilterInterface } from '../interfaces/log-entry.interface';
 import { LogService } from '../services/log.service';
 
 @Component({
@@ -16,17 +16,22 @@ export class LogComponent implements OnInit {
   dataSource: MatTableDataSource<LogEntryInterface>;
   selection: SelectionModel<LogEntryInterface>;
 
+  @Input()
+  public mode: string = 'full'; // or 'lite'
+
+  @Input()
+  public filter: LogEntryFilterInterface = {};
+
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
 
 
-  constructor(private _logService: LogService) {
-  }
+  constructor(private _logService: LogService) {  }
 
   ngOnInit() {
     // Assign the data to the data source for the table to render
-    const logEntries = this._logService.getLogEntries({category: 'Payload 1', isInternal: false});
+    const logEntries = this._logService.getLogEntries(this.filter);
     this.dataSource = new MatTableDataSource(logEntries);
 
     this.dataSource.paginator = this.paginator;
