@@ -18,8 +18,10 @@ const payloadFolders: PayloadFolderInterface[] = [
     isFolder: true,
     parentNode: 1,
     modifiedDate: (new Date('2019-08-07 01:02:03')).toUTCString(),
-    transferStatus: null,
-    transferDate: null
+    transferStatusMS: null,
+    transferStatusJPL: null,
+    transferDateMS: null,
+    transferDateJPL: null
   },
   {
     name: 'Payload 2',
@@ -43,8 +45,10 @@ const payloadFolders: PayloadFolderInterface[] = [
     isFolder: true,
     parentNode: 1,
     modifiedDate: (new Date('2019-08-07 01:03:05')).toUTCString(),
-    transferStatus: null,
-    transferDate: null
+    transferStatusMS: null,
+    transferStatusJPL: null,
+    transferDateMS: null,
+    transferDateJPL: null
   },
   {
     name: 'Payload 3',
@@ -59,8 +63,10 @@ const payloadFolders: PayloadFolderInterface[] = [
     isFolder: true,
     parentNode: 1,
     modifiedDate: (new Date('2019-08-07 02:03:04')).toUTCString(),
-    transferStatus: null,
-    transferDate: null
+    transferStatusMS: null,
+    transferStatusJPL: null,
+    transferDateMS: null,
+    transferDateJPL: null
   },
   {
     name: 'Payload 4',
@@ -74,8 +80,10 @@ const payloadFolders: PayloadFolderInterface[] = [
     isFolder: true,
     parentNode: 1,
     modifiedDate: (new Date('2019-08-07 02:04:06')).toUTCString(),
-    transferStatus: null,
-    transferDate: null
+    transferStatusMS: null,
+    transferStatusJPL: null,
+    transferDateMS: null,
+    transferDateJPL: null
   },
 ];
 
@@ -89,8 +97,10 @@ const otherNodes: NodeInterface[] = [
     isFolder: true,
     parentNode: null,
     modifiedDate: null,
-    transferStatus: null,
-    transferDate: null
+    transferStatusMS: null,
+    transferStatusJPL: null,
+    transferDateMS: null,
+    transferDateJPL: null
   },
   {
     name: 'ephemeris.es',
@@ -101,8 +111,10 @@ const otherNodes: NodeInterface[] = [
     isFolder: false,
     parentNode: 123,
     modifiedDate: (new Date('2019-08-07 09:11:13')).toUTCString(),
-    transferStatus: null,
-    transferDate: null
+    transferStatusMS: "Success",
+    transferDateMS: (new Date('2019-09-16 14:15:16')).toUTCString(),
+    transferStatusJPL: "Success",
+    transferDateJPL: (new Date('2019-09-16 14:15:16')).toUTCString()
   },
   {
     name: 'attitude.es',
@@ -113,8 +125,10 @@ const otherNodes: NodeInterface[] = [
     isFolder: false,
     parentNode: 123,
     modifiedDate: (new Date('2019-08-07 08:09:10')).toUTCString(),
-    transferStatus: "Success",
-    transferDate: (new Date('2019-09-16 14:15:16')).toUTCString()
+    transferStatusMS: "Success",
+    transferDateMS: (new Date('2019-08-16 14:15:16')).toUTCString(),
+    transferStatusJPL: "Success",
+    transferDateJPL: (new Date('2019-08-16 14:15:16')).toUTCString()
   }];
 
 const nodes: NodeInterface[] = otherNodes.concat(payloadFolders);

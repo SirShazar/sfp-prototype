@@ -12,7 +12,7 @@ import { LogService } from '../services/log.service';
   styleUrls: ['./log.component.css']
 })
 export class LogComponent implements OnInit {
-  displayedColumns: string[] = ['user', 'file', 'time', 'message'];
+  displayedColumns: string[];
   dataSource: MatTableDataSource<LogEntryInterface>;
   selection: SelectionModel<LogEntryInterface>;
 
@@ -28,9 +28,17 @@ export class LogComponent implements OnInit {
 
 
   constructor(private _logService: LogService) {
+
   }
 
   ngOnInit() {
+    if(this.mode == 'full'){
+      this.displayedColumns = ['payload','user', 'file', 'time', 'message'];
+    }
+    else {
+      this.displayedColumns = ['user', 'file', 'time', 'message'];
+    }
+
     // Assign the data to the data source for the table to render
     const logEntries = this._logService.getLogEntries(this.filter);
     this.dataSource = new MatTableDataSource(logEntries);

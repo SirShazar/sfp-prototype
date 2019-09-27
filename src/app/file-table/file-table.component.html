@@ -44,20 +44,32 @@
     <!-- Modified Date Column -->
     <ng-container matColumnDef="modifiedDate">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Modified Date</th>
-      <td mat-cell *matCellDef="let row">{{ row.modifiedDate | date }}</td>
+      <td mat-cell *matCellDef="let row">{{ row.modifiedDate | date : 'yyyy-MM-dd hh:mm:ss' }}</td>
     </ng-container>
 
     <!-- Transfer Status Column -->
-    <ng-container matColumnDef="transferStatus">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Transfer Status</th>
-      <td mat-cell *matCellDef="let row">{{ row.transferStatus }}</td>
+    <ng-container matColumnDef="transferStatusMS">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Transfer Status MS</th>
+      <td mat-cell *matCellDef="let row">{{ row.transferStatusMS }}</td>
     </ng-container>
 
     <!-- Transfer Date Column -->
-    <ng-container matColumnDef="transferDate">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Transfer Date</th>
-      <td mat-cell *matCellDef="let row">{{ row.transferDate | date }}</td>
+    <ng-container matColumnDef="transferDateMS">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Transfer Date MS</th>
+      <td mat-cell *matCellDef="let row">{{ row.transferDateMS | date : 'yyyy-MM-dd hh:mm:ss' }}</td>
     </ng-container>
+
+        <!-- Transfer Status Column -->
+        <ng-container matColumnDef="transferStatusJPL">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Transfer Status JPL</th>
+            <td mat-cell *matCellDef="let row">{{ row.transferStatusJPL }}</td>
+          </ng-container>
+      
+          <!-- Transfer Date Column -->
+          <ng-container matColumnDef="transferDateJPL">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Transfer Date JPL</th>
+            <td mat-cell *matCellDef="let row">{{ row.transferDateJPL | date : 'yyyy-MM-dd hh:mm:ss' }}</td>
+          </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns" (click)="selection.toggle(row)"></tr>

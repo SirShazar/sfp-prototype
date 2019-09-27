@@ -5,33 +5,33 @@ import { FileService } from './file.service';
 
 const entriesArray: LogEntryInterface[] = [
 
-  {
-    id: 1,
-    isInternal: true,
-    message: "SFTService started.",
-    author: "SFTService",
-    node: null,
-    loggedDate: "2019-09-18 01:23:45",
-    category: "SFTService"
-  },
-  {
-    id: 2,
-    isInternal: false,
-    message: "Payload folder 'Payload 1' was created.",
-    author: "jmdoe",
-    node: 24,
-    loggedDate: "2019-09-19 12:34:56",
-    category: "Payload 1"
-  },
-  {
-    id: 3,
-    isInternal: false,
-    message: "Payload folder 'Payload 2' was created.",
-    author: "jmdoe",
-    node: 25,
-    loggedDate: "2019-09-19 12:35:43",
-    category: "Payload 2"
-  },
+  // {
+  //   id: 1,
+  //   isInternal: true,
+  //   message: "SFTService started.",
+  //   author: "SFTService",
+  //   node: null,
+  //   loggedDate: "2019-09-18 01:23:45",
+  //   category: "SFTService"
+  // },
+  // {
+  //   id: 2,
+  //   isInternal: false,
+  //   message: "Payload folder 'Payload 1' was created.",
+  //   author: "jmdoe",
+  //   node: 24,
+  //   loggedDate: "2019-09-19 12:34:56",
+  //   category: "Payload 1"
+  // },
+  // {
+  //   id: 3,
+  //   isInternal: false,
+  //   message: "Payload folder 'Payload 2' was created.",
+  //   author: "jmdoe",
+  //   node: 25,
+  //   loggedDate: "2019-09-19 12:35:43",
+  //   category: "Payload 2"
+  // },
   {
     id: 4,
     isInternal: false,

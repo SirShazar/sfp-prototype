@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class UtilitiesService {
-  static isAdmin: boolean = true;
+  static isAdmin: boolean = false;
 
   static getAdminStatus(): boolean {
     return this.isAdmin;

@@ -49,7 +49,7 @@ export class ExplorerViewComponent {
         {
           name: 'Payload 1',
           updated: '5/5/2019 00:00:00',
-          open: false
+          open: true
         }
       ];
     }
@@ -57,7 +57,7 @@ export class ExplorerViewComponent {
 
   openCreateFolderDialog(): void {
     const dialogRef = this.dialog.open(CreateFolderDialogComponent, {
-      width: '450px',
+      width: '550px',
       data: {}
     });
 
@@ -97,51 +97,6 @@ export class ExplorerViewComponent {
       name: 'Payload 4',
       updated: '5/5/2019 00:00:00',
       open: false
-    }
-  ];
-
-  files: File[] = [
-    {
-      name: 'Ephemeris1.atl',
-      updated: '5/5/2019 00:00:00',
-      size: 1024,
-      transferstatus: 'Success',
-      transferdate: '5/5/2019 00:00:00',
-    },
-    {
-      name: 'Ephemeris2.atl',
-      updated: '5/5/2019 00:00:00',
-      size: 1024,
-      transferstatus: 'Success',
-      transferdate: '5/5/2019 00:00:00',
-    },
-    {
-      name: 'Ephemeris3.atl',
-      updated: '5/5/2019 00:00:00',
-      size: 1024,
-      transferstatus: 'Success',
-      transferdate: '5/5/2019 00:00:00',
-    },
-    {
-      name: 'Ephemeris4.atl',
-      updated: '5/5/2019 00:00:00',
-      size: 1024,
-      transferstatus: 'Success',
-      transferdate: '5/5/2019 00:00:00',
-    },
-    {
-      name: 'Ephemeris5.atl',
-      updated: '5/5/2019 00:00:00',
-      size: 1024,
-      transferstatus: 'Success',
-      transferdate: '5/5/2019 00:00:00',
-    },
-    {
-      name: 'Ephemeris6.atl',
-      updated: '5/5/2019 00:00:00',
-      size: 1024,
-      transferstatus: 'Success',
-      transferdate: '5/5/2019 00:00:00',
     }
   ];
 

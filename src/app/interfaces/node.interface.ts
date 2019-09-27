@@ -8,6 +8,8 @@ export interface NodeInterface {
   size: number;
   url: string;
   modifiedDate: string;
-  transferStatus: string;
-  transferDate: string;
+  transferStatusJPL: string;
+  transferStatusMS: string;
+  transferDateJPL: string;
+  transferDateMS: string;
 }

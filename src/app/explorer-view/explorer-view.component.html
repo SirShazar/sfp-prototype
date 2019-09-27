@@ -5,7 +5,7 @@
         <button mat-button (click)="openCreateFolderDialog()" *ngIf="isAdmin">
           <mat-icon>create_new_folder</mat-icon> Add Payload Folder
         </button>
-        <button mat-button (click)="openUploadFileDialog()"><mat-icon>cloud_upload</mat-icon> Upload File</button>
+        <button mat-button (click)="fileSelect.click()"><mat-icon>cloud_upload</mat-icon> Upload File</button>
         <button mat-button><mat-icon>how_to_vote</mat-icon> Transfer File</button>
         <button mat-button *ngIf="isAdmin"><mat-icon>create</mat-icon> Edit</button>
         <button mat-button><mat-icon>delete</mat-icon> Delete</button>
@@ -20,8 +20,8 @@
       <mat-list>
         <h3 mat-subheader>Folders</h3>
         <mat-list-item *ngFor="let folder of folders" [class.selectedFolder]="folder.open == true">
-          <mat-icon mat-list-icon *ngIf="folder.open == false">folder</mat-icon>
-          <mat-icon mat-list-icon *ngIf="folder.open == true">folder_open</mat-icon>
+          <mat-icon color="primary" mat-list-icon *ngIf="folder.open == false">folder</mat-icon>
+          <mat-icon color="primary" mat-list-icon *ngIf="folder.open == true">folder_open</mat-icon>
           <h4 mat-line>{{ folder.name }}</h4>
         </mat-list-item>
         <mat-divider></mat-divider>
@@ -38,10 +38,11 @@
         <as-split-area size="30" #area2="asSplitArea">
           <!-- <div class="activity-log-pane"> -->
           <h3 class="fake-mat-h3">Activity Log</h3>
-          <app-log (mode)="('lite')" (filter)="({ category: 'Payload 1', isInternal: false })"></app-log>
+          <app-log (mode)="'lite'" (filter)="({ category: 'Payload 1', isInternal: false })"></app-log>
           <!-- </div> -->
         </as-split-area>
       </as-split>
     </div>
   </div>
 </div>
+<input hidden type="file" #fileSelect>

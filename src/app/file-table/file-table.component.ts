@@ -14,7 +14,7 @@ import { NodeInterface } from '../interfaces/node.interface';
   styleUrls: ['./file-table.component.css']
 })
 export class FileTableComponent implements OnInit {
-  displayedColumns: string[] = ['select', 'icon', 'name', 'size', 'modifiedDate', 'transferStatus', 'transferDate'];
+  displayedColumns: string[] = ['select', 'icon', 'name', 'size', 'modifiedDate', 'transferStatusMS', 'transferDateMS','transferStatusJPL', 'transferDateJPL'];
   dataSource: MatTableDataSource<NodeInterface>;
   selection: SelectionModel<NodeInterface>;
 
